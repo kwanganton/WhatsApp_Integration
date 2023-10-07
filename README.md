@@ -8,5 +8,5 @@
 
 5. Activate/ Link to your Whatsapp Account
 
-![Alt text](https://powerdashapps.s3.amazonaws.com/github_whatsapp/w2.png) 
+![Alt text](https://powerdashapps.s3.amazonaws.com/github_whatsapp/w2.png)
    
