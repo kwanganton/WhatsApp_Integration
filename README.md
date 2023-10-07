@@ -1,4 +1,4 @@
-# WhatsApp Integration for APEX
+# WhatsApp Integration for APEX green-api.com
 
 1. Register Account at green-api.com
    
