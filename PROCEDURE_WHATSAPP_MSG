@@ -1,0 +1,26 @@
+create or replace PROCEDURE P_WHATSAPP_MSG (IN_MSG varchar2, IN_PHONE varchar2) AS 
+v_url varchar2(4000);
+v_instance varchar2(100):='xxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+v_token varchar2(1000):='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+v_body  clob;  
+l_response clob;
+
+begin
+--apex_web_service.g_request_headers.delete;
+v_url := 'https://api.green-api.com/waInstance'||v_instance||'/sendMessage/'||v_token||'';
+
+
+v_body:='{
+    "chatId": "'||IN_PHONE||'@c.us",
+    "message": "'||IN_MSG||'"}';
+
+apex_web_service.g_request_headers(1).name := 'Content-Type';
+apex_web_service.g_request_headers(1).value := 'application/json';
+l_response := apex_web_service.make_rest_request(
+                    p_url    => v_url,
+                    p_http_method => 'POST',
+                    p_body    => v_body);
+
+dbms_output.put_line('Response: ' || l_response);
+
+END P_WHATSAPP_MSG;
