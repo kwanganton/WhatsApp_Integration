@@ -1,0 +1,11 @@
+    v_message := 'Shuttle Job *' || d.code || '* Started \n\n'||
+    'Your driver is on the way to pick you up.\n\n'
+    ||'*👨‍✈️Driver:* '|| NVL(d.driver,'-')||'\n'
+    ||'*🚖Vehicle:* '|| NVL(d.vehicle,'-')||'\n'
+    ||'*📅Date:* '|| TO_CHAR(d.shuttle_date,'DD-MON-YYYY')||'\n'
+    ||'*⏰Time:* '|| TO_CHAR(d.shuttle_date,'HH:MI AM')
+    ;
+ P_WHATSAPP_MSG(IN_MSG =>v_message, IN_PHONE =>'5926136970');
+
+
+ /**USESE MARKDOWN**/
